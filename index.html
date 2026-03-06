@@ -141,7 +141,8 @@
             <div class="underline"></div>
         </div>
         <div class="contact-wrapper">
-            <form id="contactForm" action="https://docs.google.com/forms/d/e/1FAIpQLSfVOPXaHe14ftIOEGx7HS7_gitc_b84_ibwqetGlZ8fZr9mZA/formResponse?submit=Submit&usp=pp_url" method="POST">
+
+            <form id="contactForm" action="https://docs.google.com/forms/d/e/1FAIpQLSfVOPXaHe14ftIOEGx7HS7_gitc_b84_ibwqetGlZ8fZr9mZA/formResponse?submit=Submit&usp=pp_url" target="hidden_iframe"   method="POST"  >
                 <div class="form-group">
                     <label>Nombre o Razón Social</label>
                     <input type="text" placeholder="Tu nombre o empresa" name="entry.1826377319" required>
@@ -154,10 +155,10 @@
                     <label>Servicio Requerido</label>
                     <select name="entry.1332415480" required>
                         <option value="" disabled selected>Selecciona una opción</option>
-                        <option value="redes">Redes de Datos y Conectividad</option>
-                        <option value="camaras">CCTV / Vigilancia Electrónica</option>
-                        <option value="mantenimiento">Soporte y Mantenimiento de Sistemas</option>
-                        <option value="web">Desarrollo Web / Presencia Digital</option>
+                        <option value="Infraestructura y redes de datos">Redes de Datos y Conectividad</option>
+                        <option value="CCTV y vigilancia">CCTV / Vigilancia Electrónica</option>
+                        <option value="Soporte Tecnico">Soporte y Mantenimiento de Sistemas</option>
+                        <option value="Desarrollo web">Desarrollo Web / Presencia Digital</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -171,6 +172,7 @@
         </div>
     </section>
 
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {alert('¡Datos enviados con éxito!'); document.getElementById('contactForm').reset();}"></iframe>
     <footer>
         <div class="logo">RIO<span>TEC</span></div>
         <p style="margin-top: 1rem; font-size: 0.85rem; color: #64748b;">
@@ -179,6 +181,12 @@
     </footer>
 
     <script>
+       // envio de formulario al iframe
+       let submitted = false;
+document.getElementById('contactForm').addEventListener('submit', () => {
+    submitted = true;
+});
+            
         // Cargar iconos
         lucide.createIcons();
 
@@ -195,11 +203,11 @@
         });
 
         // Formulario
-        document.getElementById('contactForm').addEventListener('submit', (e) => {
+/*         document.getElementById('contactForm').addEventListener('submit', (e) => {
             e.preventDefault();
             alert('Solicitud enviada correctamente. Un técnico se pondrá en contacto con usted a la brevedad.');
             e.target.reset();
-        });
+        }); */
 
         //togel buttom
 
