@@ -157,6 +157,7 @@
             color: #cbd5e1;
             margin-bottom: 3rem;
             font-weight: 300;
+            text-align: center ;
         }
 
         .hero p span { color: var(--primary-blue); font-weight: 600; }
