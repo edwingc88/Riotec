@@ -183,12 +183,14 @@
     <script>
        // envio de formulario al iframe
        let submitted = false;
-document.getElementById('contactForm').addEventListener('submit', () => {
-    submitted = true;
-});
+
             
         // Cargar iconos
         lucide.createIcons();
+
+        document.getElementById('contactForm').addEventListener('submit', () => {
+    submitted = true;
+});
 
         // Efecto Header
         window.addEventListener('scroll', () => {
@@ -223,6 +225,9 @@ document.querySelectorAll('nav a').forEach(link => {
         nav.classList.remove('active');
     });
 });
+
+
+
     </script>
 </body>
 </html>
